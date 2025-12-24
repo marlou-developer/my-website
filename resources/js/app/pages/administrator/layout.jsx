@@ -10,6 +10,7 @@ import {
     DocumentDuplicateIcon,
     FolderIcon,
     HomeIcon,
+    UserIcon,
     UsersIcon,
     XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -18,13 +19,22 @@ import {
     MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import SidebarSection from "./_sections/sidebar-section";
-import { setDesktopCollapsed, setSidebarOpen } from "@/app/redux/app-slice";
+import {
+    setAlert,
+    setDesktopCollapsed,
+    setSidebarOpen,
+} from "@/app/redux/app-slice";
 import { useDispatch, useSelector } from "react-redux";
 import TopbarSection from "./_sections/topbar-section";
 import Card from "@/app/_components/card";
 import { FcCalendar, FcFile, FcOvertime } from "react-icons/fc";
 import Button from "@/app/_components/button";
 import Tab from "@/app/_components/tab";
+import Alert from "@/app/_components/alert";
+import Badge from "@/app/_components/badge";
+import DropDown from "@/app/_components/dropdown";
+import Select from "@/app/_components/select";
+import Pagination from "@/app/_components/pagination";
 const tabList = ["Dashboard", "Attendance", "Timesheets", "Reports"];
 const navigation = [
     { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -52,11 +62,13 @@ const userNavigation = [
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
+const myJobs = [];
 
 export default function Layout() {
     const dispatch = useDispatch();
-    const { desktopCollapsed } = useSelector((store) => store.app);
+    const { desktopCollapsed, alert } = useSelector((store) => store.app);
     const [active, setActive] = useState(1);
+
     return (
         <div className="h-full bg-white dark:bg-gray-900">
             {/* Mobile sidebar */}
@@ -74,82 +86,7 @@ export default function Layout() {
                     className={`flex-1 p-6 ${desktopCollapsed ? "ml-20" : ""}`}
                 >
                     {/* Your main content here */}
-                    {/* asssssssssssssssssssssssssssssssssssssssssssss */}
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-4">
-                        <Card
-                            href="#"
-                            variant="danger"
-                            onClick={() => {
-                                // router.visit(
-                                //     `/users/ticketing/my_ticket?status=Pending`
-                                // );
-                                alert("My Open Ticket clicked");
-                            }}
-                            className="text-white "
-                        >
-                            <div className="flex flex-col">
-                                <div className="flex flex-row items-center justify-between">
-                                    <div>icon</div>
-                                    <div>100</div>
-                                </div>
-                                <div>My Open Ticket</div>
-                            </div>
-                        </Card>
-                        <Card
-                            href="#"
-                            variant="success"
-                            onClick={() => {
-                                alert("My Open Ticket clicked");
-                            }}
-                            className="text-white"
-                        >
-                            <div className="flex flex-col">
-                                <div className="flex flex-row items-center justify-between">
-                                    <div>icon</div>
-                                    <div>100</div>
-                                </div>
-                                <div>My Open Ticket</div>
-                            </div>
-                        </Card>
-                        <Card
-                            href="#"
-                            variant="bg-green-500"
-                            onClick={() => {
-                                // router.visit(
-                                //     `/users/ticketing/my_ticket?status=Pending`
-                                // );
-                                alert("My Open Ticket clicked");
-                            }}
-                            className="text-white"
-                        >
-                            <div className="flex flex-col">
-                                <div className="flex flex-row items-center justify-between">
-                                    <div>icon</div>
-                                    <div>100</div>
-                                </div>
-                                <div>My Open Ticket</div>
-                            </div>
-                        </Card>
-                        <Card
-                            href="#"
-                            variant="bg-yellow-500"
-                            onClick={() => {
-                                // router.visit(
-                                //     `/users/ticketing/my_ticket?status=Pending`
-                                // );
-                                alert("My Open Ticket clicked");
-                            }}
-                            className="text-white"
-                        >
-                            <div className="flex flex-col">
-                                <div className="flex flex-row items-center justify-between">
-                                    <div>icon</div>
-                                    <div>100</div>
-                                </div>
-                                <div>My Open Ticket</div>
-                            </div>
-                        </Card>
-                    </div>
+                    ssssssssssssssssssssss
                 </main>
             </div>
         </div>

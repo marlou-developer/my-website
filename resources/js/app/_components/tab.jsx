@@ -29,8 +29,8 @@ export default function Tab({ tabs, activeIndex, onTabClick }) {
 // const tabList = ["Dashboard", "Attendance", "Timesheets", "Reports"];
 // const [active, setActive] = useState(1);
 
-//                              <Tab
-//                                 tabs={tabList}
-//                                 activeIndex={active}
-//                                 onTabClick={setActive}
-//                             />
+                            //  <Tab
+                            //     tabs={tabList}
+                            //     activeIndex={active}
+                            //     onTabClick={setActive}
+                            // />

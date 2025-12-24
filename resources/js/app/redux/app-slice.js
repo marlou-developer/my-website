@@ -6,6 +6,12 @@ export const appSlice = createSlice({
         user: {},
         sidebarOpen:false,
         desktopCollapsed:false,
+        alert:{
+            type: 'none',
+            title: '',
+            message: '',
+            open: false,
+        }
     },
     reducers: {
         setUser: (state, action) => {
@@ -16,9 +22,12 @@ export const appSlice = createSlice({
         },
         setDesktopCollapsed: (state) => {
             state.desktopCollapsed = !state.desktopCollapsed;
-        },  
+        }, 
+        setAlert: (state, action) => {
+            state.alert = action.payload;
+        } 
     },
 });
-export const { setUser, setSidebarOpen, setDesktopCollapsed } = appSlice.actions;
+export const { setUser, setSidebarOpen, setDesktopCollapsed,setAlert } = appSlice.actions;
 
 export default appSlice.reducer;
