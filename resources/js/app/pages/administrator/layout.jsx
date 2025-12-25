@@ -13,7 +13,7 @@ export default function Layout() {
             <SidebarSection />
             <div
                 className={`${
-                    desktopCollapsed ? "lg:pl-20" : "lg:pl-72"
+                    desktopCollapsed ? "" : "lg:pl-72"
                 } flex flex-col min-h-screen transition-all duration-300`}
             >
                 <TopbarSection />
