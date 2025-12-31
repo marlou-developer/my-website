@@ -1,11 +1,28 @@
 import React from "react";
 import Layout from "../layout";
 import POSCheckout from "./_sections/pos-checkout-section";
+import POSProductListSection from "./_sections/pos-product-list-section";
+import POSSelectedProductSection from "./_sections/pos-selected-product-section";
 
 export default function Page() {
     return (
         <Layout>
-            <POSCheckout />
+            <div className=" bg-gray-100  font-sans">
+                <div className=" grid grid-cols-12 gap-4 bg-white overflow-hidden border border-gray-200 h-[90vh]">
+                    {/* LEFT: PRODUCTS (5 Columns) */}
+                    <POSProductListSection />
+
+                    {/* MIDDLE: CART (5 Columns) */}
+                    <section className="col-span-12 py-3 lg:col-span-5 border-r flex flex-col overflow-auto">
+                        <POSSelectedProductSection />
+                    </section>
+
+                    {/* RIGHT: PAYMENT & HELD (2 Columns) */}
+                    <section className="col-span-12 lg:col-span-3 p-4 flex flex-col bg-gray-50">
+                        <POSCheckout />
+                    </section>
+                </div>
+            </div>
         </Layout>
     );
 }

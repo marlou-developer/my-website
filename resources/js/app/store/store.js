@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import appSlice from "../redux/app-slice";
+import posProductSlice  from "../redux/pos/pos-product-slice";
 const store = configureStore({
     reducer: {
         app: appSlice,
+        pos_products:posProductSlice
     },
 });
 
