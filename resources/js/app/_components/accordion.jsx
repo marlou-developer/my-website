@@ -30,8 +30,10 @@ export default function Accordion({ items = [], single = true }) {
                                 onClick={() => toggleIndex(index)}
                                 aria-expanded={isOpen}
                                 aria-controls={`accordion-body-${index}`}
-                                className="flex items-center justify-between w-full p-5 font-medium text-body gap-3
-                           hover:text-heading hover:bg-neutral-secondary-medium"
+                                className={`flex items-center justify-between w-full p-5 font-medium text-body gap-3
+                           hover:text-heading hover:bg-neutral-secondary-medium border border-grey-200 ${
+                               isOpen ? "bg-blue-100" : ""
+                           }`}
                             >
                                 <span>{item.title}</span>
 

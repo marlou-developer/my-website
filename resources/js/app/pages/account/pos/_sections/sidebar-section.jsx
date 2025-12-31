@@ -3,12 +3,16 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSidebarOpen } from "@/app/redux/app-slice";
 import {
-    FcViewDetails,
     FcBullish,
-    FcConferenceCall,
     FcSettings,
-    
-    FcDepartment,
+    FcSelfServiceKiosk,
+    FcShipped,
+    FcBusinesswoman,
+    FcSalesPerformance,
+    FcPositiveDynamic,
+    FcFeedIn,
+    FcDonate,
+    FcDataSheet,
 } from "react-icons/fc";
 import Tooltip from "@/app/_components/tooltip";
 import { Link } from "@inertiajs/react";
@@ -21,12 +25,18 @@ function classNames(...classes) {
 export default function SidebarSection() {
     const { desktopCollapsed, sidebarOpen } = useSelector((store) => store.app);
     const dispatch = useDispatch();
-    const path = window.location.pathname.split("/")[2];
+    const path = window.location.pathname.split("/")[3];
         const navigation = [
-            { name: "Dashboard", href: "/administrator/dashboard", icon: FcBullish, current: path == "dashboard" },
-            { name: "Subscribers", href: "/administrator/subscribers", icon: FcDepartment, current: path == "subscribers" },
-            { name: "Users", href: "/administrator/users", icon: FcConferenceCall, current: path == "users" },
-            { name: "Settings", href: "/administrator/settings", icon: FcSettings, current: path == "settings" },
+            { name: "Dashboard", href: "/account/pos/dashboard", icon: FcDataSheet, current: path == "dashboard" },
+            { name: "POS", href: "/account/pos/pos", icon: FcSelfServiceKiosk, current: path == "pos" },
+            { name: "Products", href: "/account/pos/products", icon: FcBullish, current: path == "products" },
+            { name: "Stack Movements", href: "/account/pos/stack_movements", icon: FcFeedIn, current: path == "stack_movements" },
+            { name: "Purchases", href: "/account/pos/purchases", icon: FcDonate, current: path == "purchases" },
+            { name: "Suppliers", href: "/account/pos/suppliers", icon: FcShipped, current: path == "suppliers" },
+            { name: "Customers", href: "/account/pos/customers", icon: FcBusinesswoman, current: path == "customers" },
+            { name: "Cash Register", href: "/account/pos/cash_register", icon: FcSalesPerformance, current: path == "cash_register" },
+            { name: "Reports", href: "/account/pos/reports", icon: FcPositiveDynamic, current: path == "reports" },
+            { name: "Settings", href: "/account/pos/settings", icon: FcSettings, current: path == "settings" },
         ];
 
     const sidebarWidth = desktopCollapsed
