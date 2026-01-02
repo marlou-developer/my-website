@@ -115,7 +115,10 @@ export default function POSSelectedProductSection() {
                 </div>
                 <div className="flex gap-2 pt-2">
                     <button
-                        onClick={() => dispatch(setCart([]))}
+                        onClick={() => {
+                            dispatch(setCart([]));
+                            dispatch(setAmountPaid(0));
+                        }}
                         className="flex-1 flex items-center justify-center gap-2 border border-gray-300 py-2 rounded font-bold hover:bg-gray-100"
                     >
                         <Trash2 size={16} /> Clear
