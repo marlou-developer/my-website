@@ -9,7 +9,15 @@ class PosCashRegister extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'opening_balance', 'closing_balance', 'status'];
+    protected $fillable = [
+        'user_id',
+        'opening_amount',
+        'closing_amount',
+        'total_sales',
+        'opened_at',
+        'closed_at',
+        'notes'
+    ];
 
     public function user()
     {

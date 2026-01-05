@@ -9,7 +9,12 @@ class PosCashTransaction extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['cash_register_id', 'type', 'amount', 'description'];
+    protected $fillable = [
+        'cash_register_id',
+        'type',
+        'amount',
+        'reason'
+    ];
 
     public function cash_register()
     {

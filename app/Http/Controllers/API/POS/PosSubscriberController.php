@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\API\POS\PosSupplier;
+use App\Models\API\POS\PosSubscriber;
 use Illuminate\Http\Request;
 
-class PosSupplierController extends Controller
+class PosSubscriberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class PosSupplierController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PosSupplier $posSupplier)
+    public function show(PosSubscriber $posSubscriber)
     {
         //
     }
@@ -42,7 +42,7 @@ class PosSupplierController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PosSupplier $posSupplier)
+    public function edit(PosSubscriber $posSubscriber)
     {
         //
     }
@@ -50,7 +50,7 @@ class PosSupplierController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PosSupplier $posSupplier)
+    public function update(Request $request, PosSubscriber $posSubscriber)
     {
         //
     }
@@ -58,7 +58,7 @@ class PosSupplierController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PosSupplier $posSupplier)
+    public function destroy(PosSubscriber $posSubscriber)
     {
         //
     }

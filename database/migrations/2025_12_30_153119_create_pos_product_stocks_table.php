@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('pos_product_stocks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products');
-            $table->decimal('quantity', 10, 3); // grocery uses decimals for weight
-            $table->string('location')->nullable();
+            $table->foreignId('product_id')->constrained('pos_products');
+            $table->foreignId('subscriber_id')->constrained('pos_subscribers');
+            $table->bigInteger('stocks')->nullable();
+            $table->decimal('cost_price', 10, 2)->nullable();
+            $table->decimal('sell_price', 10, 2)->nullable();
+            $table->decimal('discount', 10, 2)->nullable();
             $table->timestamps();
         });
     }

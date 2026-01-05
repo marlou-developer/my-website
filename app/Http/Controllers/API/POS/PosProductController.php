@@ -15,10 +15,7 @@ class PosProductController extends Controller
     {
         $products = PosProduct::with('category', 'unit')->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $products
-        ]);
+        return response()->json($products, 200);
     }
 
     /**

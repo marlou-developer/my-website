@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('pos_stock_movements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('product_stock_id')->constrained('pos_product_stocks');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->enum('type', ['IN', 'OUT', 'ADJUST']);
             $table->string('reference')->nullable(); // purchase, sale, manual
             $table->decimal('qty_before', 10, 3);
             $table->decimal('qty_change', 10, 3);
             $table->decimal('qty_after', 10, 3);
-            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->timestamps();
         });
     }

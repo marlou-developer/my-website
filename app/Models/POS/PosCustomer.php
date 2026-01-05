@@ -9,7 +9,13 @@ class PosCustomer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'phone', 'address'];
+    protected $fillable = [
+        'subscriber_id',
+        'name',
+        'phone',
+        'email',
+        'address'
+    ];
 
     public function sales()
     {

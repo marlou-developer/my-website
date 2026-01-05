@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pos_customers', function (Blueprint $table) {
+        Schema::create('pos_suppliers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('subscriber_id')->nullable()->constrained('pos_subscribers');
             $table->string('name')->nullable();
+            $table->string('contact_person')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pos_customers');
+        Schema::dropIfExists('pos_suppliers');
     }
 };

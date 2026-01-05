@@ -10,14 +10,13 @@ class PosProduct extends Model
     use HasFactory;
 
     protected $fillable = [
+        'unit_id',
+        'category_id',
         'barcode',
         'name',
-        'category_id',
-        'unit_id',
-        'cost_price',
-        'sell_price',
         'image'
     ];
+
 
     public function category()
     {

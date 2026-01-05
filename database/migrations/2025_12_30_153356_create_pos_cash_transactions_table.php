@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pos_cash_transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('register_id')->constrained('cash_registers');
+            $table->foreignId('cash_register_id')->constrained('cash_registers');
             $table->enum('type', ['add', 'withdraw', 'expense']);
             $table->decimal('amount', 10, 2);
             $table->string('reason')->nullable();

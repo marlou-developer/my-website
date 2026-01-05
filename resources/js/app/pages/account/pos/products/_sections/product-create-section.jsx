@@ -4,7 +4,9 @@ import Input from "@/app/_components/input";
 import Modal from "@/app/_components/modal";
 import Select from "@/app/_components/select";
 import { setAlert } from "@/app/redux/app-slice";
+import { get_pos_products_thunk } from "@/app/redux/pos/pos-product-thunk";
 import { create_pos_product_service } from "@/app/services/pos-product-service";
+import store from "@/app/store/store";
 import { Plus } from "lucide-react";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -49,6 +51,7 @@ export default function ProductCreateSection() {
             await create_pos_product_service(formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
+            await store.dispatch(get_pos_products_thunk());
             await setOpen(false);
             await reset();
             dispatch(

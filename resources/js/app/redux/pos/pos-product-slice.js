@@ -15,6 +15,7 @@ export const posProductSlice = createSlice({
         searchTerm: "",
         category: "All Categories",
         currentPage: 1,
+        products:[],
     },
     reducers: {
         setCart: (state, action) => {
@@ -39,6 +40,9 @@ export const posProductSlice = createSlice({
         setCurrentPage: (state, action) => {
             state.currentPage = action.payload;
         },
+        setProducts: (state, action) => {
+            state.products = action.payload;
+        }
     },
 });
 
@@ -50,5 +54,6 @@ export const {
     setSearchTerm,
     setCategory,
     setCurrentPage,
+    setProducts,
 } = posProductSlice.actions;
 export default posProductSlice.reducer;

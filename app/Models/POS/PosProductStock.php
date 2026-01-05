@@ -9,7 +9,15 @@ class PosProductStock extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id', 'quantity', 'location'];
+    protected $fillable = [
+        'product_id',
+        'subscriber_id',
+        'stocks',
+        'cost_price',
+        'sell_price',
+        'discount',
+    ];
+
 
     public function product()
     {

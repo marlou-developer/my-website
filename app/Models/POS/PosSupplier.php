@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Models\POS;
+namespace App\Models\API\POS;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PosSupplier extends Model
 {
-    use HasFactory;
 
-    protected $fillable = ['name', 'email', 'phone', 'address'];
-
-    public function purchases()
-    {
-        return $this->hasMany(PosPurchase::class);
-    }
+    protected $fillable = [
+        'subscriber_id',
+        'name',
+        'contact_person',
+        'phone',
+        'email',
+        'address',
+    ];
 }

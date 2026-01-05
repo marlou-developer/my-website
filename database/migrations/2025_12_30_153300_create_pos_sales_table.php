@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('pos_sales', function (Blueprint $table) {
             $table->id();
-            $table->string('invoice_no')->unique();
-            $table->foreignId('customer_id')->nullable()->constrained('customers');
             $table->foreignId('user_id')->constrained('users'); // cashier
+            $table->foreignId('customer_id')->nullable()->constrained('pos_customers');
+            $table->string('invoice_no')->unique();
             $table->decimal('total_amount', 10, 2);
             $table->decimal('discount', 10, 2)->default(0);
             $table->decimal('tax', 10, 2)->default(0);
             $table->decimal('amount_paid', 10, 2);
             $table->decimal('change_due', 10, 2)->default(0);
             $table->enum('payment_type', ['cash', 'card', 'gcash', 'bank']);
+            $table->boolean('is_credit')->default(false);
             $table->enum('status', ['paid', 'void', 'refund'])->default('paid');
             $table->timestamps();
         });

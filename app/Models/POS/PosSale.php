@@ -10,15 +10,16 @@ class PosSale extends Model
     use HasFactory;
 
     protected $fillable = [
-        'invoice_no',
-        'customer_id',
         'user_id',
+        'customer_id',
+        'invoice_no',
         'total_amount',
         'discount',
         'tax',
         'amount_paid',
         'change_due',
         'payment_type',
+        'is_credit',
         'status'
     ];
 
@@ -29,7 +30,7 @@ class PosSale extends Model
 
     public function sale_items()
     {
-        return $this->hasMany(PosSalesItem::class, 'sale_id');
+        return $this->hasMany(PosSalesItem::class);
     }
 
     public function user()

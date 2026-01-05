@@ -167,7 +167,7 @@ import { useDispatch, useSelector } from "react-redux";
         },
     ];
 export default function ProductPaginationSection() {
-     const { searchTerm, category, currentPage } = useSelector(
+     const { searchTerm, category, currentPage,products } = useSelector(
         (store) => store.pos_products
     );
     const dispatch = useDispatch();
@@ -175,7 +175,7 @@ export default function ProductPaginationSection() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-     const filteredProducts = INITIAL_PRODUCTS.filter((p) => {
+     const filteredProducts = products.filter((p) => {
         const matchesSearch = p.name
             .toLowerCase()
             .includes(searchTerm.toLowerCase());

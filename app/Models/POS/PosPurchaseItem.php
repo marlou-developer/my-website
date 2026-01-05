@@ -9,7 +9,13 @@ class PosPurchaseItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['purchase_id', 'product_id', 'quantity', 'cost_price', 'subtotal'];
+    protected $fillable = [
+        'purchase_id',
+        'product_id',
+        'quantity',
+        'cost_price',
+        'subtotal'
+    ];
 
     public function purchase()
     {

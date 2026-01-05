@@ -10,13 +10,13 @@ class PosStockMovement extends Model
     use HasFactory;
 
     protected $fillable = [
-        'product_id',
-        'quantity',
+        'product_stock_id',
+        'user_id',
         'type',
-        'reason',
-        'location_from',
-        'location_to',
-        'user_id'
+        'reference',
+        'qty_before',
+        'qty_change',
+        'qty_after',
     ];
 
     public function product()
